@@ -115,6 +115,11 @@ namespace formAuthentication.Controllers
             return RedirectToAction("Index");
         }
 
+        [AllowAnonymous]
+        public ActionResult About()
+        {
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
