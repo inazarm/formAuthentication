@@ -10,7 +10,6 @@ using formAuthentication.Models;
 
 namespace formAuthentication.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private formAuthenticationEntities db = new formAuthenticationEntities();

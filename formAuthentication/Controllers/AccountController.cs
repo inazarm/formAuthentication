@@ -9,6 +9,7 @@ using formAuthentication.Models;
 
 namespace formAuthentication.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         // GET: Account
