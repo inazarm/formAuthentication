@@ -18,8 +18,33 @@
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="tblUserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tblUserRole_tblLogin">
+    <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="0..1" />
+    <End Role="tblUserRole" Type="Self.tblUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLogin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="formAuthenticationModelStoreContainer">
     <EntitySet Name="tblLogin" EntityType="Self.tblLogin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblStudent" EntityType="Self.tblStudent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserRole" EntityType="Self.tblUserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblUserRole_tblLogin" Association="Self.FK_tblUserRole_tblLogin">
+      <End Role="tblLogin" EntitySet="tblLogin" />
+      <End Role="tblUserRole" EntitySet="tblUserRole" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

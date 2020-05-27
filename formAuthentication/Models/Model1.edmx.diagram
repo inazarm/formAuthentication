@@ -7,6 +7,8 @@
       <Diagram DiagramId="cbfc8da004404819a9a253269df9e38b" Name="Diagram1">
         <EntityTypeShape EntityType="formAuthenticationModel.tblLogin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="formAuthenticationModel.tblStudent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="formAuthenticationModel.tblUserRole" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="formAuthenticationModel.FK_tblUserRole_tblLogin" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

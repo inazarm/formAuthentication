@@ -8,6 +8,7 @@
     <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="tblUserRole" Relationship="formAuthenticationModel.FK_tblUserRole_tblLogin" FromRole="tblLogin" ToRole="tblUserRole" />
   </EntityType>
   <EntityType Name="tblStudent">
     <Key>
@@ -21,5 +22,31 @@
   <EntityContainer Name="formAuthenticationEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tblLogins" EntityType="Self.tblLogin" />
     <EntitySet Name="tblStudents" EntityType="Self.tblStudent" />
+    <EntitySet Name="tblUserRole" EntityType="formAuthenticationModel.tblUserRole" />
+    <AssociationSet Name="FK_tblUserRole_tblLogin" Association="formAuthenticationModel.FK_tblUserRole_tblLogin">
+      <End Role="tblLogin" EntitySet="tblLogins" />
+      <End Role="tblUserRole" EntitySet="tblUserRole" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="tblUserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblLogin" Relationship="formAuthenticationModel.FK_tblUserRole_tblLogin" FromRole="tblUserRole" ToRole="tblLogin" />
+  </EntityType>
+  <Association Name="FK_tblUserRole_tblLogin">
+    <End Type="formAuthenticationModel.tblLogin" Role="tblLogin" Multiplicity="0..1" />
+    <End Type="formAuthenticationModel.tblUserRole" Role="tblUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLogin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

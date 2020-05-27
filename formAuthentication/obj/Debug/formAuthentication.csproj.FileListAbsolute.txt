@@ -76,7 +76,7 @@ C:\Users\inaza\source\repos\formAuthentication\formAuthentication\bin\System.Web
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\bin\Newtonsoft.Json.xml
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\bin\Antlr3.Runtime.pdb
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.csprojAssemblyReference.cache
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.csproj.CopyComplete
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.dll
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.pdb
+C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.csprojAssemblyReference.cache

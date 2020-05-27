@@ -27,7 +27,6 @@ namespace formAuthentication.Models
     
         public virtual DbSet<tblLogin> tblLogins { get; set; }
         public virtual DbSet<tblStudent> tblStudents { get; set; }
-
-        public System.Data.Entity.DbSet<formAuthentication.Models.Membership> Memberships { get; set; }
+        public virtual DbSet<tblUserRole> tblUserRole { get; set; }
     }
 }

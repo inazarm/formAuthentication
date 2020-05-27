@@ -36,6 +36,7 @@ namespace formAuthentication.Controllers
         }
 
         // GET: Home/Create
+        [Authorize(Roles ="Admin , Customer")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +47,7 @@ namespace formAuthentication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin , Customer")]
         public ActionResult Create([Bind(Include = "id,Name,Email,Phone")] tblStudent tblStudent)
         {
             if (ModelState.IsValid)
@@ -59,6 +61,7 @@ namespace formAuthentication.Controllers
         }
 
         // GET: Home/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace formAuthentication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "id,Name,Email,Phone")] tblStudent tblStudent)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace formAuthentication.Controllers
         }
 
         // GET: Home/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

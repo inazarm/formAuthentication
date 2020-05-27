@@ -14,9 +14,18 @@ namespace formAuthentication.Models
     
     public partial class tblLogin
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblLogin()
+        {
+            this.tblUserRole = new HashSet<tblUserRole>();
+        }
+    
         public int Id { get; set; }
         public string userName { get; set; }
         public string password { get; set; }
         public Nullable<bool> status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblUserRole> tblUserRole { get; set; }
     }
 }
