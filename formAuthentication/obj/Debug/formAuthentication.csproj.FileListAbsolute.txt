@@ -79,4 +79,3 @@ C:\Users\inaza\source\repos\formAuthentication\formAuthentication\bin\Microsoft.
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.csproj.CopyComplete
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.dll
 C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.pdb
-C:\Users\inaza\source\repos\formAuthentication\formAuthentication\obj\Debug\formAuthentication.csprojAssemblyReference.cache
